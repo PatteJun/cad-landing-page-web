@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="CARAUKTION - Exclusive Car Auctions for Dealers">
+  <Navbar />
+  
+  <main>
+    <section class="bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="text-center max-w-4xl mx-auto">
+          <h1 class="text-4xl md:text-6xl font-bold text-text-primary mb-6 leading-tight">
+            Bid on Cars from Private Sellers – Exclusively for Dealers
+          </h1>
+          <p class="text-xl text-text-secondary mb-12 max-w-3xl mx-auto">
+            Access a unique inventory of cars from private owners, brought to you by CARAUKTION Direct. Browse auctions on desktop or mobile and grow your dealership's opportunities.
+          </p>
+          <div class="flex flex-col sm:flex-row justify-center gap-4 mb-12">
+            <a href="#" class="bg-primary text-white px-8 py-4 rounded-md font-semibold text-lg hover:bg-red-700 transition-colors">
+              Explore Live Auctions
+            </a>
+            <a href="#" class="bg-white text-primary border-2 border-primary px-8 py-4 rounded-md font-semibold text-lg hover:bg-gray-50 transition-colors">
+              Learn More & Get Started
+            </a>
+          </div>
+          <div class="flex justify-center">
+            <a href="#" target="_blank" rel="noopener noreferrer" class="text-text-secondary hover:text-primary flex items-center gap-2 font-medium">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+              </svg>
+              Download Our App
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
