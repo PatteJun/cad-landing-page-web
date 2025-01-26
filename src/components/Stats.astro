@@ -1,0 +1,86 @@
+---
+const stats = [
+  { id: 1, name: 'Auctions in the last 30 days', value: 1058, duration: 2000 },
+  { id: 2, name: 'Cars sold in the last 30 days', value: 192, duration: 1500 },
+  { id: 3, name: 'Active auctions', value: 54, duration: 1000 },
+];
+---
+
+<section id="stats-section" class="bg-gray-50 py-16 sm:py-24">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-4xl">
+      <div class="text-center">
+        <h2 class="text-3xl font-bold tracking-tight text-text-primary sm:text-4xl">
+          Daily New Opportunities for Your Stock
+        </h2>
+        <p class="mt-4 text-lg text-text-secondary">
+          Join hundreds of successful car dealers who trust CARAUKTION to source their inventory
+        </p>
+      </div>
+      <dl class="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-3">
+        {stats.map((stat) => (
+          <div key={stat.id} class="bg-white rounded-lg shadow-sm px-6 py-8 text-center">
+            <dt class="text-sm font-semibold text-text-secondary">{stat.name}</dt>
+            <dd class="mt-2 text-4xl font-bold text-primary">
+              <span 
+                class="stat-value" 
+                data-target={stat.value}
+                data-duration={stat.duration}
+              >0</span>
+            </dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </div>
+</section>
+
+<script>
+  function animateValue(element: HTMLElement, start: number, end: number, duration: number) {
+    let startTimestamp: number | null = null;
+    
+    const step = (timestamp: number) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      
+      const current = Math.floor(progress * (end - start) + start);
+      element.textContent = current.toLocaleString();
+      
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    };
+    
+    window.requestAnimationFrame(step);
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const statsSection = entry.target;
+        const statElements = statsSection.querySelectorAll('.stat-value');
+        
+        statElements.forEach(element => {
+          if (element instanceof HTMLElement) {
+            const target = parseInt(element.dataset.target || '0', 10);
+            const duration = parseInt(element.dataset.duration || '2000', 10);
+            animateValue(element, 0, target, duration);
+          }
+        });
+        
+        observer.unobserve(statsSection);
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '50px'
+  });
+
+  // Wait for the DOM to be fully loaded
+  document.addEventListener('DOMContentLoaded', () => {
+    const statsSection = document.getElementById('stats-section');
+    if (statsSection) {
+      observer.observe(statsSection);
+    }
+  });
+</script>
