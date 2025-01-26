@@ -1,5 +1,23 @@
-This is a landing page project for a product called "CARAUKTION Direct" by CARAUKTION AG. 
+# Project Overview
+This project is a landing page for "CARAUKTION Direct," a product by CARAUKTION AG. It is built using Astro.js and TailwindCSS. The goal is to create a visually appealing and user-friendly interface that aligns with the brand's identity.
 
-The project is built with Astro.js and TailwindCSS.
+# Technologies
+- **Astro.js**: A modern static site generator for building fast websites.
+- **TailwindCSS**: A utility-first CSS framework for rapid UI development.
 
-Please always try to keep the brand and style of the project consistent.
+# Brand Guidelines
+- **Consistency**: Maintain a consistent style and tone throughout the project.
+- **Color Palette**: Use the brand's official colors that are already defined in the tailwind.config.js file.
+- **Typography**: Follow the brand's typography guidelines that are already defined in the tailwind.config.js file.
+
+# Design Principles
+- **Simplicity**: Keep the design clean and uncluttered.
+- **Responsiveness**: Ensure the page is fully responsive across all devices.
+- **Accessibility**: Adhere to accessibility standards to make the site usable for everyone.
+
+# Development Guidelines
+- **Code Quality**: Write clean, maintainable, and well-documented code.
+- **Performance**: Optimize for fast loading times and efficient resource usage.
+
+# Additional Notes
+- **SEO**: Implement basic SEO practices to improve search engine visibility.
