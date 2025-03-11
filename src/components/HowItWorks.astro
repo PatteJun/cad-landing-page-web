@@ -1,17 +1,17 @@
 ---
-import { content } from '../content/de';
-const { howItWorks } = content;
+import { content } from '../store/language';
+const initialContent = content.get();
 ---
 
 <section id="how-it-works" class="relative bg-white py-24 overflow-hidden">
   <div class="absolute inset-0 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.gray.100),white)]"></div>
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center max-w-3xl mx-auto mb-16">
-      <h2 class="text-3xl font-bold tracking-tight text-text-primary sm:text-4xl">
-        {howItWorks.title}
+      <h2 class="text-3xl font-bold tracking-tight text-text-primary sm:text-4xl" id="how-it-works-title">
+        {initialContent.howItWorks.title}
       </h2>
-      <p class="mt-4 text-lg text-text-secondary">
-        {howItWorks.subtitle}
+      <p class="mt-4 text-lg text-text-secondary" id="how-it-works-subtitle">
+        {initialContent.howItWorks.subtitle}
       </p>
     </div>
 
@@ -19,17 +19,17 @@ const { howItWorks } = content;
       {/* Connection line */}
       <div class="absolute top-1/2 left-4 right-4 h-0.5 bg-gray-200 transform -translate-y-1/2 hidden md:block"></div>
       
-      <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
-        {howItWorks.steps.map((step) => (
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-8" id="steps-container">
+        {initialContent.howItWorks.steps.map((step, index) => (
           <div class="relative group h-full">
             <div class="bg-white rounded-xl p-6 shadow-lg shadow-gray-200/50 transition-transform duration-300 hover:-translate-y-2 h-full flex flex-col">
               <div class="h-16 w-16 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-4 mx-auto flex-shrink-0">
                 <Fragment set:html={step.icon} />
               </div>
-              <h3 class="text-lg font-semibold text-text-primary mb-2 text-center flex-shrink-0">
+              <h3 class="text-lg font-semibold text-text-primary mb-2 text-center flex-shrink-0 step-title">
                 {step.title}
               </h3>
-              <p class="text-text-secondary text-center flex-grow">
+              <p class="text-text-secondary text-center flex-grow step-description">
                 {step.description}
               </p>
             </div>
@@ -39,3 +39,32 @@ const { howItWorks } = content;
     </div>
   </div>
 </section>
+
+<script>
+  import { content } from '../store/language';
+
+  content.subscribe(newContent => {
+    // Update main title and subtitle
+    document.getElementById('how-it-works-title')!.textContent = newContent.howItWorks.title;
+    document.getElementById('how-it-works-subtitle')!.textContent = newContent.howItWorks.subtitle;
+
+    // Update steps
+    const stepsContainer = document.getElementById('steps-container');
+    if (!stepsContainer) return;
+
+    const steps = stepsContainer.children;
+    newContent.howItWorks.steps.forEach((step, index) => {
+      if (steps[index]) {
+        const titleElement = steps[index].querySelector('.step-title');
+        const descriptionElement = steps[index].querySelector('.step-description');
+        
+        if (titleElement) {
+          titleElement.textContent = step.title;
+        }
+        if (descriptionElement) {
+          descriptionElement.textContent = step.description;
+        }
+      }
+    });
+  });
+</script>

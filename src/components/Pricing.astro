@@ -1,24 +1,24 @@
 ---
-import { content } from '../content/de';
-const { pricing } = content;
+import { content } from '../store/language';
+const initialContent = content.get();
 ---
 
 <section id="pricing" class="bg-white py-24 sm:py-32">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="mx-auto max-w-4xl sm:text-center">
-      <h2 class="text-3xl font-bold tracking-tight text-text-primary sm:text-4xl">
-        {pricing.title}
+      <h2 class="text-3xl font-bold tracking-tight text-text-primary sm:text-4xl" id="pricing-title">
+        {initialContent.pricing.title}
       </h2>
-      <p class="mx-auto mt-6 max-w-2xl text-lg text-text-secondary">
-        {pricing.subtitle}
+      <p class="mx-auto mt-6 max-w-2xl text-lg text-text-secondary" id="pricing-subtitle">
+        {initialContent.pricing.subtitle}
       </p>
     </div>
 
     <div class="mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none">
       <div class="p-8 sm:p-10 lg:flex-auto">
-        <h3 class="text-2xl font-bold tracking-tight text-text-primary">{pricing.commission.title}</h3>
-        <p class="mt-6 text-base text-text-secondary">
-          {pricing.commission.description}
+        <h3 class="text-2xl font-bold tracking-tight text-text-primary" id="commission-title">{initialContent.pricing.commission.title}</h3>
+        <p class="mt-6 text-base text-text-secondary" id="commission-description">
+          {initialContent.pricing.commission.description}
         </p>
         
         <div class="mt-10 flex items-center gap-x-4">
@@ -26,8 +26,8 @@ const { pricing } = content;
           <div class="h-px flex-auto bg-gray-100"></div>
         </div>
 
-        <ul role="list" class="mt-8 grid grid-cols-1 gap-4 text-sm text-text-secondary sm:grid-cols-2 sm:gap-6">
-          {pricing.features.map((feature) => (
+        <ul role="list" class="mt-8 grid grid-cols-1 gap-4 text-sm text-text-secondary sm:grid-cols-2 sm:gap-6" id="features-list">
+          {initialContent.pricing.features.map((feature) => (
             <li class="flex gap-x-3">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 flex-none text-primary" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
@@ -41,23 +41,23 @@ const { pricing } = content;
       <div class="-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0">
         <div class="rounded-2xl bg-gray-50 py-10 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center lg:py-16">
           <div class="mx-auto max-w-xs px-8">
-            <p class="text-base font-semibold text-text-secondary">Success-based commission</p>
+            <p class="text-base font-semibold text-text-secondary" id="commission-rate-label">Success-based commission</p>
             <p class="mt-6 flex items-baseline justify-center gap-x-2">
-              <span class="text-5xl font-bold tracking-tight text-primary">{pricing.commission.rate}</span>
+              <span class="text-5xl font-bold tracking-tight text-primary" id="commission-rate">{initialContent.pricing.commission.rate}</span>
             </p>
-            <p class="mt-1 text-sm text-text-secondary">
-              {pricing.commission.rateLabel}
+            <p class="mt-1 text-sm text-text-secondary" id="commission-rate-description">
+              {initialContent.pricing.commission.rateLabel}
             </p>
-            <p class="mt-3 text-sm font-medium text-text-secondary">
-              {pricing.commission.minimumFee}
+            <p class="mt-3 text-sm font-medium text-text-secondary" id="commission-minimum-fee">
+              {initialContent.pricing.commission.minimumFee}
             </p>
             
-            <a href="#" class="mt-10 block w-full rounded-md bg-primary px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-red-700 transition-colors">
-              {pricing.commission.button}
+            <a href="#" class="mt-10 block w-full rounded-md bg-primary px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-red-700 transition-colors" id="commission-button">
+              {initialContent.pricing.commission.button}
             </a>
             
-            <p class="mt-6 text-xs text-text-secondary">
-              {pricing.commission.note}
+            <p class="mt-6 text-xs text-text-secondary" id="commission-note">
+              {initialContent.pricing.commission.note}
             </p>
           </div>
         </div>
@@ -65,3 +65,36 @@ const { pricing } = content;
     </div>
   </div>
 </section>
+
+<script>
+  import { content } from '../store/language';
+
+  content.subscribe(newContent => {
+    // Update main pricing section
+    document.getElementById('pricing-title')!.textContent = newContent.pricing.title;
+    document.getElementById('pricing-subtitle')!.textContent = newContent.pricing.subtitle;
+
+    // Update commission section
+    document.getElementById('commission-title')!.textContent = newContent.pricing.commission.title;
+    document.getElementById('commission-description')!.textContent = newContent.pricing.commission.description;
+    document.getElementById('commission-rate')!.textContent = newContent.pricing.commission.rate;
+    document.getElementById('commission-rate-description')!.textContent = newContent.pricing.commission.rateLabel;
+    document.getElementById('commission-minimum-fee')!.textContent = newContent.pricing.commission.minimumFee;
+    document.getElementById('commission-button')!.textContent = newContent.pricing.commission.button;
+    document.getElementById('commission-note')!.textContent = newContent.pricing.commission.note;
+
+    // Update features list
+    const featuresList = document.getElementById('features-list');
+    if (featuresList) {
+      const features = featuresList.querySelectorAll('li');
+      newContent.pricing.features.forEach((feature, index) => {
+        if (features[index]) {
+          const textNode = features[index].childNodes[1];
+          if (textNode) {
+            textNode.textContent = feature;
+          }
+        }
+      });
+    }
+  });
+</script>

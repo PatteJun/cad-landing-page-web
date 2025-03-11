@@ -1,5 +1,7 @@
 ---
 import LanguageSwitcher from './LanguageSwitcher.astro';
+import { content } from '../store/language';
+const initialContent = content.get();
 ---
 
 <nav class="bg-white shadow-sm">
@@ -10,16 +12,40 @@ import LanguageSwitcher from './LanguageSwitcher.astro';
           <img src="/cad-logo.svg" alt="CARAUKTION" class="h-16" />
         </a>
       </div>
-      <div class="hidden md:flex items-center space-x-8">
-        <a href="#pricing" class="text-text-secondary hover:text-primary font-medium">Pricing</a>
-        <a href="#how-it-works" class="text-text-secondary hover:text-primary font-medium">How it Works</a>
-        <a href="#contact" class="text-text-secondary hover:text-primary font-medium">Contact</a>
+      <div class="hidden md:flex items-center space-x-8" id="nav-links">
+        {initialContent.navbar.links.map((link) => (
+          <a href={link.href} class="text-text-secondary hover:text-primary font-medium">{link.label}</a>
+        ))}
         <div class="border-l border-gray-200 h-6 mx-2"></div>
         <LanguageSwitcher />
-        <a href="#" class="bg-primary text-white px-6 py-3 rounded-md font-semibold hover:bg-red-700 transition-colors">
-          Register Now
+        <a href="#" class="bg-primary text-white px-6 py-3 rounded-md font-semibold hover:bg-red-700 transition-colors" id="register-button">
+          {initialContent.navbar.registerButton}
         </a>
       </div>
     </div>
   </div>
 </nav>
+
+<script>
+  import { content } from '../store/language';
+
+  // Update navbar content when language changes
+  content.subscribe(newContent => {
+    const navLinks = document.getElementById('nav-links');
+    if (!navLinks) return;
+
+    // Update navigation links
+    const links = navLinks.querySelectorAll('a:not(.border-l ~ a)'); // Exclude language switcher and register button
+    newContent.navbar.links.forEach((link, index) => {
+      if (links[index]) {
+        links[index].textContent = link.label;
+      }
+    });
+
+    // Update register button
+    const registerButton = document.getElementById('register-button');
+    if (registerButton) {
+      registerButton.textContent = newContent.navbar.registerButton;
+    }
+  });
+</script>

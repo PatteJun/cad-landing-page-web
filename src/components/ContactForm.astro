@@ -1,46 +1,46 @@
 ---
-import { content } from '../content/de';
-const { contactForm } = content;
+import { content } from '../store/language';
+const initialContent = content.get();
 ---
 
 <section id="contact" class="bg-white">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
       <div class="mx-auto max-w-2xl text-center">
-        <h2 class="text-4xl font-bold tracking-tight text-text-primary sm:text-5xl">{contactForm.title}</h2>
-        <p class="mt-4 text-lg text-text-secondary">
-          {contactForm.subtitle}
+        <h2 class="text-4xl font-bold tracking-tight text-text-primary sm:text-5xl" id="contact-title">{initialContent.contactForm.title}</h2>
+        <p class="mt-4 text-lg text-text-secondary" id="contact-subtitle">
+          {initialContent.contactForm.subtitle}
         </p>
       </div>
       <form action="#" method="POST" class="mx-auto mt-16 max-w-xl sm:mt-20">
         <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
           <div class="sm:col-span-2">
-            <label for="name" class="block text-sm font-semibold text-text-primary">{contactForm.fields.name.label}</label>
+            <label for="name" class="block text-sm font-semibold text-text-primary" id="name-label">{initialContent.contactForm.fields.name.label}</label>
             <div class="mt-2.5">
               <input
                 type="text"
                 name="name"
                 id="name"
                 required
-                placeholder={contactForm.fields.name.placeholder}
+                placeholder={initialContent.contactForm.fields.name.placeholder}
                 class="block w-full rounded-md border-gray-300 px-3.5 py-2 text-text-primary shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary"
               >
             </div>
           </div>
           <div class="sm:col-span-2">
-            <label for="company" class="block text-sm font-semibold text-text-primary">{contactForm.fields.company.label}</label>
+            <label for="company" class="block text-sm font-semibold text-text-primary" id="company-label">{initialContent.contactForm.fields.company.label}</label>
             <div class="mt-2.5">
               <input
                 type="text"
                 name="company"
                 id="company"
                 required
-                placeholder={contactForm.fields.company.placeholder}
+                placeholder={initialContent.contactForm.fields.company.placeholder}
                 class="block w-full rounded-md border-gray-300 px-3.5 py-2 text-text-primary shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary"
               >
             </div>
           </div>
           <div class="sm:col-span-2">
-            <label for="role" class="block text-sm font-semibold text-text-primary">{contactForm.fields.role.label}</label>
+            <label for="role" class="block text-sm font-semibold text-text-primary" id="role-label">{initialContent.contactForm.fields.role.label}</label>
             <div class="mt-2.5">
               <select
                 id="role"
@@ -48,41 +48,41 @@ const { contactForm } = content;
                 required
                 class="block w-full rounded-md border-gray-300 px-3.5 py-2 text-text-primary shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-primary"
               >
-                <option value="">{contactForm.fields.role.placeholder}</option>
-                {contactForm.fields.role.options.map((option) => (
+                <option value="">{initialContent.contactForm.fields.role.placeholder}</option>
+                {initialContent.contactForm.fields.role.options.map((option) => (
                   <option value={option.value}>{option.label}</option>
                 ))}
               </select>
             </div>
           </div>
           <div>
-            <label for="email" class="block text-sm font-semibold text-text-primary">{contactForm.fields.email.label}</label>
+            <label for="email" class="block text-sm font-semibold text-text-primary" id="email-label">{initialContent.contactForm.fields.email.label}</label>
             <div class="mt-2.5">
               <input
                 type="email"
                 name="email"
                 id="email"
                 required
-                placeholder={contactForm.fields.email.placeholder}
+                placeholder={initialContent.contactForm.fields.email.placeholder}
                 class="block w-full rounded-md border-gray-300 px-3.5 py-2 text-text-primary shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary"
               >
             </div>
           </div>
           <div>
-            <label for="phone" class="block text-sm font-semibold text-text-primary">{contactForm.fields.phone.label}</label>
+            <label for="phone" class="block text-sm font-semibold text-text-primary" id="phone-label">{initialContent.contactForm.fields.phone.label}</label>
             <div class="mt-2.5">
               <input
                 type="tel"
                 name="phone"
                 id="phone"
                 required
-                placeholder={contactForm.fields.phone.placeholder}
+                placeholder={initialContent.contactForm.fields.phone.placeholder}
                 class="block w-full rounded-md border-gray-300 px-3.5 py-2 text-text-primary shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary"
               >
             </div>
           </div>
           <div class="sm:col-span-2">
-            <label for="source" class="block text-sm font-semibold text-text-primary">{contactForm.fields.source.label}</label>
+            <label for="source" class="block text-sm font-semibold text-text-primary" id="source-label">{initialContent.contactForm.fields.source.label}</label>
             <div class="mt-2.5">
               <select
                 id="source"
@@ -90,8 +90,8 @@ const { contactForm } = content;
                 required
                 class="block w-full rounded-md border-gray-300 px-3.5 py-2 text-text-primary shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-primary"
               >
-                <option value="">{contactForm.fields.source.placeholder}</option>
-                {contactForm.fields.source.options.map((option) => (
+                <option value="">{initialContent.contactForm.fields.source.placeholder}</option>
+                {initialContent.contactForm.fields.source.options.map((option) => (
                   <option value={option.value}>{option.label}</option>
                 ))}
               </select>
@@ -108,10 +108,10 @@ const { contactForm } = content;
                   class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
                 >
               </div>
-              <label for="privacy" class="text-sm text-text-secondary">
-                {contactForm.privacy.text}
-                <a href="#" class="font-semibold text-primary hover:text-red-700">{contactForm.privacy.linkText}</a>
-                {contactForm.privacy.additionalText}
+              <label for="privacy" class="text-sm text-text-secondary" id="privacy-label">
+                <span id="privacy-text">{initialContent.contactForm.privacy.text}</span>
+                <a href="#" class="font-semibold text-primary hover:text-red-700" id="privacy-link">{initialContent.contactForm.privacy.linkText}</a>
+                <span id="privacy-additional">{initialContent.contactForm.privacy.additionalText}</span>
               </label>
             </div>
           </div>
@@ -120,10 +120,56 @@ const { contactForm } = content;
           <button
             type="submit"
             class="block w-full rounded-md bg-primary px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-red-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary transition-colors"
+            id="submit-button"
           >
-            {contactForm.submitButton}
+            {initialContent.contactForm.submitButton}
           </button>
         </div>
       </form>
     </div>
-  </section>
+</section>
+
+<script>
+  import { content } from '../store/language';
+
+  content.subscribe(newContent => {
+    // Update form title and subtitle
+    document.getElementById('contact-title')!.textContent = newContent.contactForm.title;
+    document.getElementById('contact-subtitle')!.textContent = newContent.contactForm.subtitle;
+
+    // Update field labels and placeholders
+    const fields = ['name', 'company', 'role', 'email', 'phone', 'source'];
+    fields.forEach(field => {
+      const label = document.getElementById(`${field}-label`);
+      const input = document.getElementById(field);
+      if (label) {
+        label.textContent = newContent.contactForm.fields[field].label;
+      }
+      if (input) {
+        input.placeholder = newContent.contactForm.fields[field].placeholder;
+      }
+    });
+
+    // Update select options
+    ['role', 'source'].forEach(selectId => {
+      const select = document.getElementById(selectId);
+      if (select) {
+        const options = select.getElementsByTagName('option');
+        options[0].textContent = newContent.contactForm.fields[selectId].placeholder;
+        newContent.contactForm.fields[selectId].options.forEach((option, index) => {
+          if (options[index + 1]) {
+            options[index + 1].textContent = option.label;
+          }
+        });
+      }
+    });
+
+    // Update privacy text
+    document.getElementById('privacy-text')!.textContent = newContent.contactForm.privacy.text;
+    document.getElementById('privacy-link')!.textContent = newContent.contactForm.privacy.linkText;
+    document.getElementById('privacy-additional')!.textContent = newContent.contactForm.privacy.additionalText;
+
+    // Update submit button
+    document.getElementById('submit-button')!.textContent = newContent.contactForm.submitButton;
+  });
+</script>

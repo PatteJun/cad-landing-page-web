@@ -1,22 +1,32 @@
 ---
-import { content } from '../content/de';
-const { midPageCTA } = content;
+import { content } from '../store/language';
+const initialContent = content.get();
 ---
 
 <section class="bg-gray-50 py-16 sm:py-20">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="text-center">
-        <h2 class="text-3xl font-bold tracking-tight text-text-primary sm:text-4xl">
-          {midPageCTA.title}
+        <h2 class="text-3xl font-bold tracking-tight text-text-primary sm:text-4xl" id="mid-cta-title">
+          {initialContent.midPageCTA.title}
         </h2>
-        <p class="mx-auto mt-6 max-w-xl text-lg text-text-secondary">
-          {midPageCTA.subtitle}
+        <p class="mx-auto mt-6 max-w-xl text-lg text-text-secondary" id="mid-cta-subtitle">
+          {initialContent.midPageCTA.subtitle}
         </p>
         <div class="mt-8 flex justify-center gap-4">
-          <a href="#" class="bg-primary text-white px-6 py-3 rounded-md font-semibold hover:bg-red-700 transition-colors inline-flex items-center justify-center">
-            {midPageCTA.button}
+          <a href="#" class="bg-primary text-white px-6 py-3 rounded-md font-semibold hover:bg-red-700 transition-colors inline-flex items-center justify-center" id="mid-cta-button">
+            {initialContent.midPageCTA.button}
           </a>
         </div>
       </div>
     </div>
-  </section>
+</section>
+
+<script>
+  import { content } from '../store/language';
+
+  content.subscribe(newContent => {
+    document.getElementById('mid-cta-title')!.textContent = newContent.midPageCTA.title;
+    document.getElementById('mid-cta-subtitle')!.textContent = newContent.midPageCTA.subtitle;
+    document.getElementById('mid-cta-button')!.textContent = newContent.midPageCTA.button;
+  });
+</script>

@@ -1,25 +1,25 @@
 ---
-import { content } from '../content/de';
-const { faq } = content;
+import { content } from '../store/language';
+const initialContent = content.get();
 ---
 
 <section class="bg-gray-50 py-16 sm:py-24">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="mx-auto max-w-4xl divide-y divide-gray-200">
       <div class="text-center mb-16">
-        <h2 class="text-3xl font-bold tracking-tight text-text-primary sm:text-4xl">
-          {faq.title}
+        <h2 class="text-3xl font-bold tracking-tight text-text-primary sm:text-4xl" id="faq-title">
+          {initialContent.faq.title}
         </h2>
-        <p class="mt-4 text-lg text-text-secondary">
-          {faq.subtitle}
+        <p class="mt-4 text-lg text-text-secondary" id="faq-subtitle">
+          {initialContent.faq.subtitle}
         </p>
       </div>
-      <dl class="mt-10 space-y-6 divide-y divide-gray-200">
-        {faq.items.map((item) => (
+      <dl class="mt-10 space-y-6 divide-y divide-gray-200" id="faq-items">
+        {initialContent.faq.items.map((item) => (
           <div class="pt-6">
             <details class="group">
               <summary class="flex w-full items-start justify-between text-left cursor-pointer">
-                <span class="text-lg font-semibold text-text-primary">{item.question}</span>
+                <span class="text-lg font-semibold text-text-primary faq-question">{item.question}</span>
                 <span class="ml-6 flex h-7 items-center">
                   <svg class="h-6 w-6 rotate-0 transform text-text-secondary group-open:rotate-180 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
@@ -27,7 +27,7 @@ const { faq } = content;
                 </span>
               </summary>
               <div class="mt-4 pr-12">
-                <p class="text-base text-text-secondary">{item.answer}</p>
+                <p class="text-base text-text-secondary faq-answer">{item.answer}</p>
               </div>
             </details>
           </div>
@@ -45,3 +45,29 @@ const { faq } = content;
     display: none;
   }
 </style>
+
+<script>
+  import { content } from '../store/language';
+
+  content.subscribe(newContent => {
+    // Update FAQ title and subtitle
+    document.getElementById('faq-title')!.textContent = newContent.faq.title;
+    document.getElementById('faq-subtitle')!.textContent = newContent.faq.subtitle;
+
+    // Update FAQ items
+    const faqItems = document.getElementById('faq-items');
+    if (!faqItems) return;
+
+    const questions = faqItems.querySelectorAll('.faq-question');
+    const answers = faqItems.querySelectorAll('.faq-answer');
+
+    newContent.faq.items.forEach((item, index) => {
+      if (questions[index]) {
+        questions[index].textContent = item.question;
+      }
+      if (answers[index]) {
+        answers[index].textContent = item.answer;
+      }
+    });
+  });
+</script>
