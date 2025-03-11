@@ -147,7 +147,7 @@ export const content = {
       },
       phone: {
         label: "Phone*",
-        placeholder: "e.g. 020 1234567"
+        placeholder: "e.g. 079 1234567"
       },
       source: {
         label: "How did you hear about us?*",

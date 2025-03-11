@@ -12,12 +12,18 @@ const initialContent = content.get();
           <img src="/cad-logo.svg" alt="CARAUKTION" class="h-16" />
         </a>
       </div>
-      <div class="hidden md:flex items-center space-x-8" id="nav-links">
+      <div class="hidden md:flex items-center space-x-4" id="nav-links">
         {initialContent.navbar.links.map((link) => (
           <a href={link.href} class="text-text-secondary hover:text-primary font-medium">{link.label}</a>
         ))}
         <div class="border-l border-gray-200 h-6 mx-2"></div>
         <LanguageSwitcher />
+        <a 
+          href="https://app.direct.carauktion.ch" 
+          class="bg-white text-primary border-2 border-primary px-6 py-3 rounded-md font-semibold hover:bg-gray-50 transition-colors"
+        >
+          Login
+        </a>
         <a href="#contact" class="bg-primary text-white px-6 py-3 rounded-md font-semibold hover:bg-red-700 transition-colors" id="register-button">
           {initialContent.navbar.registerButton}
         </a>

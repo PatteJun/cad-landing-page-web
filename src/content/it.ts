@@ -4,7 +4,7 @@ export const content = {
     description: "CARAUKTION Direct"
   },
   hero: {
-    title: "Fai offerte su auto di privati - Esclusivamente per concessionari",
+    title: "Fai offerte su auto di privati - Esclusivamente per commercianti di auto",
     subtitle: "Accedi a un inventario unico di auto di proprietari privati che mettiamo a tua disposizione su CARAUKTION Direct. Sfoglia le aste comodamente dal tuo desktop o mobile ed espandi le opportunità del tuo commercio di veicoli.",
     primaryButton: "Esplora le aste attive",
     secondaryButton: "Scopri di più e inizia",
@@ -147,7 +147,7 @@ export const content = {
       },
       phone: {
         label: "Telefono*",
-        placeholder: "es. 02 1234567"
+        placeholder: "es. 079 1234567"
       },
       source: {
         label: "Come hai sentito parlare di noi?*",

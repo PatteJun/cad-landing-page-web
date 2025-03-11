@@ -4,7 +4,7 @@ export const content = {
     description: "CARAUKTION Direct"
   },
   hero: {
-    title: "Enchérissez sur des voitures de particuliers - Exclusivement pour les concessionnaires",
+    title: "Enchérissez sur des voitures de particuliers - Exclusivement pour les commerçants automobiles",
     subtitle: "Accédez à un inventaire unique de voitures de propriétaires privés que nous mettons à votre disposition sur CARAUKTION Direct. Parcourez les enchères facilement sur votre ordinateur ou mobile et développez vos opportunités commerciales.",
     primaryButton: "Explorer les enchères en cours",
     secondaryButton: "En savoir plus & Commencer",
@@ -147,7 +147,7 @@ export const content = {
       },
       phone: {
         label: "Téléphone*",
-        placeholder: "ex. 01 23 45 67 89"
+        placeholder: "ex. 079 45 67 89"
       },
       source: {
         label: "Comment avez-vous entendu parler de nous ?*",
