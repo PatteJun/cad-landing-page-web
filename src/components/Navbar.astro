@@ -1,16 +1,22 @@
+---
+import LanguageSwitcher from './LanguageSwitcher.astro';
+---
+
 <nav class="bg-white shadow-sm">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between h-16">
+    <div class="flex justify-between h-24">
       <div class="flex items-center">
         <a href="/" class="flex items-center">
-          <img src="/cad-logo.svg" alt="CARAUKTION" class="h-8" />
+          <img src="/cad-logo.svg" alt="CARAUKTION" class="h-16" />
         </a>
       </div>
       <div class="hidden md:flex items-center space-x-8">
         <a href="#pricing" class="text-text-secondary hover:text-primary font-medium">Pricing</a>
         <a href="#how-it-works" class="text-text-secondary hover:text-primary font-medium">How it Works</a>
         <a href="#contact" class="text-text-secondary hover:text-primary font-medium">Contact</a>
-        <a href="#" class="bg-primary text-white px-4 py-2 rounded-md font-semibold hover:bg-red-700 transition-colors">
+        <div class="border-l border-gray-200 h-6 mx-2"></div>
+        <LanguageSwitcher />
+        <a href="#" class="bg-primary text-white px-6 py-3 rounded-md font-semibold hover:bg-red-700 transition-colors">
           Register Now
         </a>
       </div>

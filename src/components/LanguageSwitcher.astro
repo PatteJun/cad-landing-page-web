@@ -1,0 +1,46 @@
+---
+const languages = [
+  { code: 'de', label: 'DE' },
+  { code: 'en', label: 'EN' },
+  { code: 'fr', label: 'FR' },
+  { code: 'it', label: 'IT' }
+];
+---
+
+<div class="relative inline-block text-left">
+  <div>
+    <button type="button" class="inline-flex items-center gap-x-1.5 text-sm font-medium text-text-secondary hover:text-primary" id="language-button" aria-expanded="false" aria-haspopup="true">
+      DE
+      <svg class="-mr-1 h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+      </svg>
+    </button>
+  </div>
+
+  <div class="absolute right-0 z-10 mt-2 w-24 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none hidden" role="menu" aria-orientation="vertical" aria-labelledby="language-button" tabindex="-1" id="language-menu">
+    <div class="py-1" role="none">
+      {languages.map((lang) => (
+        <a href="#" class="text-text-secondary block px-4 py-2 text-sm hover:bg-gray-50 hover:text-primary" role="menuitem" tabindex="-1">{lang.label}</a>
+      ))}
+    </div>
+  </div>
+</div>
+
+<script>
+  const button = document.getElementById('language-button');
+  const menu = document.getElementById('language-menu');
+
+  button?.addEventListener('click', () => {
+    const isExpanded = button.getAttribute('aria-expanded') === 'true';
+    button.setAttribute('aria-expanded', (!isExpanded).toString());
+    menu?.classList.toggle('hidden');
+  });
+
+  // Close the menu when clicking outside
+  document.addEventListener('click', (event) => {
+    if (!button?.contains(event.target as Node) && !menu?.contains(event.target as Node)) {
+      button?.setAttribute('aria-expanded', 'false');
+      menu?.classList.add('hidden');
+    }
+  });
+</script>
