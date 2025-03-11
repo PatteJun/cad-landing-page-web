@@ -1,41 +1,6 @@
 ---
-const steps = [
-  {
-    title: "Vehicle Submission",
-    description: "Private sellers submit their vehicle details through our streamlined process, providing comprehensive information about their car.",
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
-    </svg>`
-  },
-  {
-    title: "Quality Review",
-    description: "Our expert team thoroughly reviews each vehicle submission to ensure quality and accuracy before listing.",
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-    </svg>`
-  },
-  {
-    title: "24h Auction",
-    description: "Once approved, the vehicle enters a fast-paced 24-hour auction where dealers can place their bids.",
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-    </svg>`
-  },
-  {
-    title: "Seller Decision",
-    description: "After the auction ends, the seller has 48 hours to accept or decline the highest bid.",
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-    </svg>`
-  },
-  {
-    title: "Deal Completion",
-    description: "Upon acceptance, contact information is shared between the dealer and seller to complete the transaction.",
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11" />
-    </svg>`
-  }
-];
+import { content } from '../content/de';
+const { howItWorks } = content;
 ---
 
 <section id="how-it-works" class="relative bg-white py-24 overflow-hidden">
@@ -43,10 +8,10 @@ const steps = [
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center max-w-3xl mx-auto mb-16">
       <h2 class="text-3xl font-bold tracking-tight text-text-primary sm:text-4xl">
-        How CARAUKTION Direct Works
+        {howItWorks.title}
       </h2>
       <p class="mt-4 text-lg text-text-secondary">
-        A streamlined process from listing to successful sale
+        {howItWorks.subtitle}
       </p>
     </div>
 
@@ -55,7 +20,7 @@ const steps = [
       <div class="absolute top-1/2 left-4 right-4 h-0.5 bg-gray-200 transform -translate-y-1/2 hidden md:block"></div>
       
       <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
-        {steps.map((step) => (
+        {howItWorks.steps.map((step) => (
           <div class="relative group h-full">
             <div class="bg-white rounded-xl p-6 shadow-lg shadow-gray-200/50 transition-transform duration-300 hover:-translate-y-2 h-full flex flex-col">
               <div class="h-16 w-16 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-4 mx-auto flex-shrink-0">

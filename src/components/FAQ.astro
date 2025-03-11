@@ -1,34 +1,6 @@
 ---
-const faqs = [
-  {
-    question: "How does CARAUKTION Direct work?",
-    answer: "Private sellers list their cars on our platform. As a registered dealer, you can view detailed information about each vehicle, place bids, and participate in auctions. Once you win an auction, we handle all the paperwork and logistics to ensure a smooth transaction."
-  },
-  {
-    question: "What types of vehicles are available?",
-    answer: "We offer a wide range of vehicles from private sellers across Switzerland, including passenger cars, SUVs, and light commercial vehicles. All vehicles undergo a thorough verification process before being listed."
-  },
-  {
-    question: "How are vehicle conditions verified?",
-    answer: "Each vehicle listed on CARAUKTION Direct undergoes a comprehensive inspection by our certified partners. Detailed condition reports, including photos and documentation, are provided for every auction listing."
-  },
-  {
-    question: "What are the costs involved?",
-    answer: "Registration for dealers is free. When you successfully win an auction, a transparent buyer's premium is applied. There are no hidden fees, and all costs are clearly displayed before bidding."
-  },
-  {
-    question: "How long do auctions typically last?",
-    answer: "Most auctions run for 24-48 hours, giving you enough time to review the vehicle details and place your bids. The exact duration is always displayed on each auction listing."
-  },
-  {
-    question: "Is there a mobile app available?",
-    answer: "Yes, we offer a dedicated mobile app for both iOS and Android devices. You can participate in auctions, receive notifications, and manage your account on the go."
-  },
-  {
-    question: "What happens after winning an auction?",
-    answer: "Once you win an auction, our team handles all the necessary paperwork and coordinates the vehicle transfer. You'll receive detailed instructions and support throughout the process."
-  }
-];
+import { content } from '../content/de';
+const { faq } = content;
 ---
 
 <section class="bg-gray-50 py-16 sm:py-24">
@@ -36,18 +8,18 @@ const faqs = [
     <div class="mx-auto max-w-4xl divide-y divide-gray-200">
       <div class="text-center mb-16">
         <h2 class="text-3xl font-bold tracking-tight text-text-primary sm:text-4xl">
-          Frequently Asked Questions
+          {faq.title}
         </h2>
         <p class="mt-4 text-lg text-text-secondary">
-          Everything you need to know about buying cars through CARAUKTION Direct
+          {faq.subtitle}
         </p>
       </div>
       <dl class="mt-10 space-y-6 divide-y divide-gray-200">
-        {faqs.map((faq) => (
+        {faq.items.map((item) => (
           <div class="pt-6">
             <details class="group">
               <summary class="flex w-full items-start justify-between text-left cursor-pointer">
-                <span class="text-lg font-semibold text-text-primary">{faq.question}</span>
+                <span class="text-lg font-semibold text-text-primary">{item.question}</span>
                 <span class="ml-6 flex h-7 items-center">
                   <svg class="h-6 w-6 rotate-0 transform text-text-secondary group-open:rotate-180 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
@@ -55,7 +27,7 @@ const faqs = [
                 </span>
               </summary>
               <div class="mt-4 pr-12">
-                <p class="text-base text-text-secondary">{faq.answer}</p>
+                <p class="text-base text-text-secondary">{item.answer}</p>
               </div>
             </details>
           </div>

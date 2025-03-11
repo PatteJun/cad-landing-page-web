@@ -1,44 +1,46 @@
 ---
+import { content } from '../content/de';
+const { contactForm } = content;
 ---
 
 <section id="contact" class="bg-white">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
       <div class="mx-auto max-w-2xl text-center">
-        <h2 class="text-4xl font-bold tracking-tight text-text-primary sm:text-5xl">Get Started Today</h2>
+        <h2 class="text-4xl font-bold tracking-tight text-text-primary sm:text-5xl">{contactForm.title}</h2>
         <p class="mt-4 text-lg text-text-secondary">
-          Leave your contact information and one of our account managers will reach out to help you get started with CARAUKTION Direct.
+          {contactForm.subtitle}
         </p>
       </div>
       <form action="#" method="POST" class="mx-auto mt-16 max-w-xl sm:mt-20">
         <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
           <div class="sm:col-span-2">
-            <label for="name" class="block text-sm font-semibold text-text-primary">Full Name*</label>
+            <label for="name" class="block text-sm font-semibold text-text-primary">{contactForm.fields.name.label}</label>
             <div class="mt-2.5">
               <input
                 type="text"
                 name="name"
                 id="name"
                 required
-                placeholder="e.g. Max Müller"
+                placeholder={contactForm.fields.name.placeholder}
                 class="block w-full rounded-md border-gray-300 px-3.5 py-2 text-text-primary shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary"
               >
             </div>
           </div>
           <div class="sm:col-span-2">
-            <label for="company" class="block text-sm font-semibold text-text-primary">Company Name*</label>
+            <label for="company" class="block text-sm font-semibold text-text-primary">{contactForm.fields.company.label}</label>
             <div class="mt-2.5">
               <input
                 type="text"
                 name="company"
                 id="company"
                 required
-                placeholder="e.g. Volkswagen Berlin"
+                placeholder={contactForm.fields.company.placeholder}
                 class="block w-full rounded-md border-gray-300 px-3.5 py-2 text-text-primary shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary"
               >
             </div>
           </div>
           <div class="sm:col-span-2">
-            <label for="role" class="block text-sm font-semibold text-text-primary">Your Role*</label>
+            <label for="role" class="block text-sm font-semibold text-text-primary">{contactForm.fields.role.label}</label>
             <div class="mt-2.5">
               <select
                 id="role"
@@ -46,42 +48,41 @@
                 required
                 class="block w-full rounded-md border-gray-300 px-3.5 py-2 text-text-primary shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-primary"
               >
-                <option value="">Select your role</option>
-                <option value="owner">Owner</option>
-                <option value="manager">Manager</option>
-                <option value="sales">Sales</option>
-                <option value="other">Other</option>
+                <option value="">{contactForm.fields.role.placeholder}</option>
+                {contactForm.fields.role.options.map((option) => (
+                  <option value={option.value}>{option.label}</option>
+                ))}
               </select>
             </div>
           </div>
           <div>
-            <label for="email" class="block text-sm font-semibold text-text-primary">Email*</label>
+            <label for="email" class="block text-sm font-semibold text-text-primary">{contactForm.fields.email.label}</label>
             <div class="mt-2.5">
               <input
                 type="email"
                 name="email"
                 id="email"
                 required
-                placeholder="your@email.com"
+                placeholder={contactForm.fields.email.placeholder}
                 class="block w-full rounded-md border-gray-300 px-3.5 py-2 text-text-primary shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary"
               >
             </div>
           </div>
           <div>
-            <label for="phone" class="block text-sm font-semibold text-text-primary">Phone*</label>
+            <label for="phone" class="block text-sm font-semibold text-text-primary">{contactForm.fields.phone.label}</label>
             <div class="mt-2.5">
               <input
                 type="tel"
                 name="phone"
                 id="phone"
                 required
-                placeholder="e.g. 089 1234567"
+                placeholder={contactForm.fields.phone.placeholder}
                 class="block w-full rounded-md border-gray-300 px-3.5 py-2 text-text-primary shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary"
               >
             </div>
           </div>
           <div class="sm:col-span-2">
-            <label for="source" class="block text-sm font-semibold text-text-primary">How did you hear about us?*</label>
+            <label for="source" class="block text-sm font-semibold text-text-primary">{contactForm.fields.source.label}</label>
             <div class="mt-2.5">
               <select
                 id="source"
@@ -89,11 +90,10 @@
                 required
                 class="block w-full rounded-md border-gray-300 px-3.5 py-2 text-text-primary shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-primary"
               >
-                <option value="">Please select</option>
-                <option value="search">Search Engine</option>
-                <option value="social">Social Media</option>
-                <option value="recommendation">Recommendation</option>
-                <option value="other">Other</option>
+                <option value="">{contactForm.fields.source.placeholder}</option>
+                {contactForm.fields.source.options.map((option) => (
+                  <option value={option.value}>{option.label}</option>
+                ))}
               </select>
             </div>
           </div>
@@ -109,9 +109,9 @@
                 >
               </div>
               <label for="privacy" class="text-sm text-text-secondary">
-                By submitting this form, you agree to our
-                <a href="#" class="font-semibold text-primary hover:text-red-700">privacy policy</a>
-                and consent to being contacted about our services.
+                {contactForm.privacy.text}
+                <a href="#" class="font-semibold text-primary hover:text-red-700">{contactForm.privacy.linkText}</a>
+                {contactForm.privacy.additionalText}
               </label>
             </div>
           </div>
@@ -121,7 +121,7 @@
             type="submit"
             class="block w-full rounded-md bg-primary px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-red-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary transition-colors"
           >
-            Become a Partner Now
+            {contactForm.submitButton}
           </button>
         </div>
       </form>
