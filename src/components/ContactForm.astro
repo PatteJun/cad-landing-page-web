@@ -11,7 +11,34 @@ const initialContent = content.get();
           {initialContent.contactForm.subtitle}
         </p>
       </div>
-      <form action="#" method="POST" class="mx-auto mt-16 max-w-xl sm:mt-20">
+
+      {/* Success message - hidden by default */}
+      <div id="success-message" class="hidden mx-auto mt-16 max-w-xl sm:mt-20 bg-green-50 p-8 rounded-lg text-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto text-green-500 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <h3 class="text-xl font-semibold text-green-800 mb-2">Thank you for your interest!</h3>
+        <p class="text-green-700">We have received your information and will contact you shortly.</p>
+      </div>
+
+      <form 
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        class="mx-auto mt-16 max-w-xl sm:mt-20"
+        id="contact-form"
+      >
+        {/* Hidden field for netlify */}
+        <input type="hidden" name="form-name" value="contact" />
+        
+        {/* Honeypot field */}
+        <p class="hidden">
+          <label>
+            Don't fill this out if you're human: <input name="bot-field" />
+          </label>
+        </p>
+
         <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
           <div class="sm:col-span-2">
             <label for="name" class="block text-sm font-semibold text-text-primary" id="name-label">{initialContent.contactForm.fields.name.label}</label>
@@ -132,6 +159,35 @@ const initialContent = content.get();
 <script>
   import { content } from '../store/language';
 
+  // Handle form submission
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const successMessage = document.getElementById('success-message');
+
+  if (form && successMessage) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      try {
+        const formData = new FormData(form);
+        await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(formData as any).toString()
+        });
+        
+        // Hide form and show success message
+        form.style.display = 'none';
+        successMessage.classList.remove('hidden');
+        
+        // Reset form
+        form.reset();
+      } catch (error) {
+        console.error('Error submitting form:', error);
+      }
+    });
+  }
+
+  // Update form content when language changes
   content.subscribe(newContent => {
     // Update form title and subtitle
     document.getElementById('contact-title')!.textContent = newContent.contactForm.title;
