@@ -181,7 +181,7 @@ export const content = {
       links: [
         { label: "Kontakt", href: "#contact" },
         { label: "FAQ", href: "#faq" },
-        { label: "Datenschutz", href: "#privacy" }
+        { label: "Datenschutz", href: "https://www.carauktion.ch/generalinfo/service/dataprotectionregulation.html" }
       ]
     },
     mobileApp: {
