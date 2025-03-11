@@ -172,17 +172,16 @@ export const content = {
     quickLinks: {
       title: "Quick Links",
       links: [
-        { label: "Über uns", href: "#" },
-        { label: "So funktioniert es", href: "#" },
-        { label: "Preise", href: "#" }
+        { label: "So funktioniert es", href: "#how-it-works" },
+        { label: "Preise", href: "#pricing" }
       ]
     },
     support: {
       title: "Support",
       links: [
-        { label: "Kontakt", href: "#" },
-        { label: "FAQ", href: "#" },
-        { label: "Datenschutz", href: "#" }
+        { label: "Kontakt", href: "#contact" },
+        { label: "FAQ", href: "#faq" },
+        { label: "Datenschutz", href: "#privacy" }
       ]
     },
     mobileApp: {
