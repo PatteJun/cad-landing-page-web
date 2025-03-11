@@ -17,8 +17,8 @@ const initialContent = content.get();
         <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto text-green-500 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
-        <h3 class="text-xl font-semibold text-green-800 mb-2">Thank you for your interest!</h3>
-        <p class="text-green-700">We have received your information and will contact you shortly.</p>
+        <h3 class="text-xl font-semibold text-green-800 mb-2" id="success-message-title">{initialContent.contactForm.successMessage.title}</h3>
+        <p class="text-green-700" id="success-message-subtitle">{initialContent.contactForm.successMessage.subtitle}</p>
       </div>
 
       <form 
@@ -230,6 +230,8 @@ const initialContent = content.get();
     document.getElementById('privacy-text')!.textContent = newContent.contactForm.privacy.text;
     document.getElementById('privacy-link')!.textContent = newContent.contactForm.privacy.linkText;
     document.getElementById('privacy-additional')!.textContent = newContent.contactForm.privacy.additionalText;
+    document.getElementById('success-message-title')!.textContent = newContent.contactForm.successMessage.title;
+    document.getElementById('success-message-subtitle')!.textContent = newContent.contactForm.successMessage.subtitle;
 
     // Update submit button
     document.getElementById('submit-button')!.textContent = newContent.contactForm.submitButton;

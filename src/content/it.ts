@@ -82,6 +82,7 @@ export const content = {
       rate: "2,99%",
       rateLabel: "della migliore offerta",
       minimumFee: "Minimo: CHF 299.-",
+      minimumFeeDescription: "Escluso IVA",
       button: "Partecipa ora",
       note: "Nessuna quota d'iscrizione, nessun costo mensile di abbonamento. Paghi solo in caso di acquisto riuscito."
     }
@@ -121,6 +122,10 @@ export const content = {
   },
   contactForm: {
     title: "Inizia oggi stesso",
+    successMessage: {
+      title: "Grazie per il tuo interesse!",
+      subtitle: "Abbiamo ricevuto le tue informazioni e ti risponderemo il prima possibile."
+    },
     subtitle: "Lascia i tuoi contatti e uno dei nostri rappresentanti del servizio clienti ti contatterà per aiutarti a iniziare con CARAUKTION Direct.",
     fields: {
       name: {

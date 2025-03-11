@@ -82,6 +82,7 @@ export const content = {
       rate: "2.99%",
       rateLabel: "of the highest bid",
       minimumFee: "Minimum: CHF 299.-",
+      minimumFeeDescription: "Excluding VAT",
       button: "Join Now",
       note: "No registration fee, no monthly subscription costs. You only pay when you successfully purchase a vehicle."
     }
@@ -121,6 +122,10 @@ export const content = {
   },
   contactForm: {
     title: "Get Started Today",
+    successMessage: {
+      title: "Thank you for your interest!",
+      subtitle: "We have received your information and will contact you shortly."
+    },
     subtitle: "Leave your contact information and one of our customer service representatives will get in touch to help you get started with CARAUKTION Direct.",
     fields: {
       name: {

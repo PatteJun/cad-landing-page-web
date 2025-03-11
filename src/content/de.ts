@@ -82,6 +82,7 @@ export const content = {
       rate: "2.99%",
       rateLabel: "des Höchstgebotes",
       minimumFee: "Minimum: CHF 299.-",
+      minimumFeeDescription: "Exkl. MwSt.",
       button: "Jetzt mitmachen",
       note: "Keine Registrierungsgebühr, keine monatlichen Abokosten. Sie bezahlen nur bei erfolgreichem Fahrzeugkauf."
     }
@@ -100,7 +101,7 @@ export const content = {
       },
       {
         question: "Was passiert nach der Auktion?",
-        answer: "Nachdem Ablauf der Auktion hat der Privatverkäufer innerhalb 48 Stunden folgende drei Möglichkeiten: 1. Das Höchstgebot akzeptieren 2. Das Höchstgebot abzulehnen 3. Dem Höchstbietenden ein letztes Gegenangebot zu unterbreiten. Dies kann der Höchstbietende auch innerhalb von 48 Stunden akzeptieren oder ablehnen. Wird das Höchstgebot akzeptiert kommt der Kauf zustande und die jeweiligen Kontaktdaten werden ausgetauscht."
+        answer: "Nachdem Ablauf der Auktion hat der Privatverkäufer innerhalb 48 Stunden folgende drei Möglichkeiten: 1. Das Höchstgebot zu akzeptieren 2. Das Höchstgebot abzulehnen 3. Dem Höchstbietenden ein letztes Gegenangebot zu unterbreiten. Dies kann der Höchstbietende auch innerhalb von 48 Stunden akzeptieren oder ablehnen. Wird das Höchstgebot akzeptiert kommt der Kauf zustande und die jeweiligen Kontaktdaten werden ausgetauscht."
       },
       {
         question: "Was kostet CARAUKTION Direct?",
@@ -121,6 +122,10 @@ export const content = {
   },
   contactForm: {
     title: "Legen Sie heute noch los",
+    successMessage: {
+      title: "Vielen Dank für Ihr Interesse!",
+      subtitle: "Wir haben Ihre Informationen erhalten und werden uns schnellstmöglich um Ihre Anfrage kümmern."
+    },
     subtitle: "Hinterlassen Sie Ihre Kontaktinformationen und einer unserer Kundendienstmitarbeiter wird sich mit Ihnen in Verbindung setzen, um Ihnen den Einstieg in CARAUKTION Direct zu erleichtern.",
     fields: {
       name: {
