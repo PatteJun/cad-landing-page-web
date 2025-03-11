@@ -165,7 +165,7 @@ export const content = {
       linkText: "privacy policy",
       additionalText: "and consent to being contacted about our services."
     },
-    submitButton: "Become a Partner Now"
+    submitButton: "Register Now"
   },
   footer: {
     description: "Your trusted platform for dealer-exclusive car sales.",
@@ -206,4 +206,4 @@ export const content = {
       { code: 'it', label: 'IT' }
     ]
   }
-};
+};  

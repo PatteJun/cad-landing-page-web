@@ -165,7 +165,7 @@ export const content = {
       linkText: "Datenschutzrichtlinie",
       additionalText: "einverstanden und stimmen zu, dass wir Sie über unsere Dienstleistungen informieren."
     },
-    submitButton: "Jetzt Partner werden"
+    submitButton: "Jetzt registrieren"
   },
   footer: {
     description: "Ihre vertrauensvolle Plattform für Händler-exklusive Autoverkäufe.",
