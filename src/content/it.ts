@@ -67,6 +67,7 @@ export const content = {
     pricing: {
       title: "Prezzi trasparenti per i concessionari",
       subtitle: "Paga solo quando acquisti con successo un veicolo. Nessun costo nascosto, nessun abbonamento.",
+      featuresTitle: "Cosa offriamo",
       features: [
         "Accesso a tutte le aste dei privati",
         "Piattaforma di offerte in tempo reale",

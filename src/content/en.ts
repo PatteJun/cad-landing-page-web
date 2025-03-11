@@ -67,6 +67,7 @@ export const content = {
     pricing: {
       title: "Transparent Pricing for Dealers",
       subtitle: "Only pay when you successfully purchase a vehicle. No hidden fees, no subscription costs.",
+      featuresTitle: "What We Offer",
       features: [
         "Access to all private seller auctions",
         "Real-time bidding platform",

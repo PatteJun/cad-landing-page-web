@@ -67,6 +67,7 @@ export const content = {
     pricing: {
       title: "Tarification transparente pour les concessionnaires",
       subtitle: "Payez uniquement lors d'un achat réussi. Pas de frais cachés, pas de coûts d'abonnement.",
+      featuresTitle: "Ce que nous vous offrons",
       features: [
         "Accès à toutes les enchères des particuliers",
         "Plateforme d'enchères en temps réel",

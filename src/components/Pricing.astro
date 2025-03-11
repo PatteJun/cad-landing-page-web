@@ -22,7 +22,7 @@ const initialContent = content.get();
         </p>
         
         <div class="mt-10 flex items-center gap-x-4">
-          <h4 class="flex-none text-sm font-semibold text-primary">What's included</h4>
+          <h4 class="flex-none text-sm font-semibold text-primary" id="features-title">{initialContent.pricing.featuresTitle}</h4>
           <div class="h-px flex-auto bg-gray-100"></div>
         </div>
 
@@ -41,7 +41,7 @@ const initialContent = content.get();
       <div class="-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0">
         <div class="rounded-2xl bg-gray-50 py-10 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center lg:py-16">
           <div class="mx-auto max-w-xs px-8">
-            <p class="text-base font-semibold text-text-secondary" id="commission-rate-label">Success-based commission</p>
+            <p class="text-base font-semibold text-text-secondary" id="commission-rate-label">{initialContent.pricing.commission.title}</p>
             <p class="mt-6 flex items-baseline justify-center gap-x-2">
               <span class="text-5xl font-bold tracking-tight text-primary" id="commission-rate">{initialContent.pricing.commission.rate}</span>
             </p>
@@ -82,6 +82,7 @@ const initialContent = content.get();
     document.getElementById('commission-minimum-fee')!.textContent = newContent.pricing.commission.minimumFee;
     document.getElementById('commission-button')!.textContent = newContent.pricing.commission.button;
     document.getElementById('commission-note')!.textContent = newContent.pricing.commission.note;
+    document.getElementById('features-title')!.textContent = newContent.pricing.featuresTitle;
 
     // Update features list
     const featuresList = document.getElementById('features-list');
