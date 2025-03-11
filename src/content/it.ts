@@ -188,7 +188,7 @@ export const content = {
       title: "App smartphone",
       downloadText: "Scarica l'app"
     },
-    copyright: "© 2025 CARAUKTION. Tutti i diritti riservati."
+    copyright: "© 2025 CARAUKTION AG. Tutti i diritti riservati."
   },
   navbar: {
     links: [
