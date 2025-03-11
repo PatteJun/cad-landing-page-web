@@ -1,7 +1,7 @@
 export const content = {
   meta: {
-    title: "CARAUKTION - Aste esclusive per concessionari",
-    description: "CARAUKTION - Aste esclusive per concessionari"
+    title: "CARAUKTION Direct",
+    description: "CARAUKTION Direct"
   },
   hero: {
     title: "Fai offerte su auto di privati - Esclusivamente per concessionari",

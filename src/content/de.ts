@@ -1,7 +1,7 @@
 export const content = {
   meta: {
-    title: "CARAUKTION - Exclusive Car Auctions for Dealers",
-    description: "CARAUKTION - Exclusive Car Auctions for Dealers"
+    title: "CARAUKTION Direct",
+    description: "CARAUKTION Direct"
   },
   hero: {
     title: "Bieten Sie auf Autos von privaten Verkäufern - Exklusiv für Händler",

@@ -1,7 +1,7 @@
 export const content = {
   meta: {
-    title: "CARAUKTION - Ventes aux enchères exclusives pour concessionnaires",
-    description: "CARAUKTION - Ventes aux enchères exclusives pour concessionnaires"
+    title: "CARAUKTION Direct",
+    description: "CARAUKTION Direct"
   },
   hero: {
     title: "Enchérissez sur des voitures de particuliers - Exclusivement pour les concessionnaires",
