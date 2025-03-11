@@ -21,11 +21,11 @@ const initialContent = content.get();
           </a>
         </div>
         <div class="flex justify-center">
-          <a href="https://app.carauktion-direct.ch/" target="_blank" rel="noopener noreferrer" class="text-text-secondary hover:text-primary flex items-center gap-2 font-medium" id="hero-app-button">
+          <a href="https://app.direct.carauktion.ch/" target="_blank" rel="noopener noreferrer" class="text-text-secondary hover:text-primary flex items-center gap-2 font-medium" id="hero-app-button">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
             </svg>
-            {initialContent.hero.appButton}
+            <span id="hero-app-button-text">{initialContent.hero.appButton}</span>
           </a>
         </div>
       </div>
@@ -41,6 +41,6 @@ const initialContent = content.get();
     document.getElementById('hero-subtitle')!.textContent = newContent.hero.subtitle;
     document.getElementById('hero-primary-button')!.textContent = newContent.hero.primaryButton;
     document.getElementById('hero-secondary-button')!.textContent = newContent.hero.secondaryButton;
-    document.getElementById('hero-app-button')!.textContent = newContent.hero.appButton;
+    document.getElementById('hero-app-button-text')!.textContent = newContent.hero.appButton;
   });
 </script>
