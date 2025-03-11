@@ -137,7 +137,13 @@ const initialContent = content.get();
               </div>
               <label for="privacy" class="text-sm text-text-secondary" id="privacy-label">
                 <span id="privacy-text">{initialContent.contactForm.privacy.text}</span>
-                <a href="#" class="font-semibold text-primary hover:text-red-700" id="privacy-link">{initialContent.contactForm.privacy.linkText}</a>
+                <a 
+                  href="https://www.carauktion.ch/generalinfo/service/dataprotectionregulation.html" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="font-semibold text-primary hover:text-red-700" 
+                  id="privacy-link"
+                >{initialContent.contactForm.privacy.linkText}</a>
                 <span id="privacy-additional">{initialContent.contactForm.privacy.additionalText}</span>
               </label>
             </div>
