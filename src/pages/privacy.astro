@@ -1,0 +1,54 @@
+---
+import PrivacyLayout from '../layouts/PrivacyLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import { content } from '../store/language';
+const initialContent = content.get();
+---
+
+<PrivacyLayout title={initialContent.privacy?.title || "Datenschutzbestimmung"}>
+  <Navbar />
+  <main class="min-h-screen bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <h1 class="text-3xl font-bold text-text-primary mb-8" id="privacy-title">
+        {initialContent.privacy?.title || "Datenschutzbestimmung"}
+      </h1>
+      
+      <div class="prose prose-lg max-w-none" id="privacy-content">
+        {initialContent.privacy?.sections.map((section) => (
+          <div class="mb-6">
+            <p>
+              <strong>{section.number}.</strong> {section.content}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </main>
+  <Footer />
+</PrivacyLayout>
+
+<script>
+  import { content } from '../store/language';
+
+  content.subscribe(newContent => {
+    const titleElement = document.getElementById('privacy-title');
+    const contentElement = document.getElementById('privacy-content');
+    
+    if (titleElement && newContent.privacy?.title) {
+      titleElement.textContent = newContent.privacy.title;
+    }
+    
+    if (contentElement && newContent.privacy?.sections) {
+      contentElement.innerHTML = newContent.privacy.sections
+        .map(section => `
+          <div class="mb-6">
+            <p>
+              <strong>${section.number}.</strong> ${section.content}
+            </p>
+          </div>
+        `)
+        .join('');
+    }
+  });
+</script>

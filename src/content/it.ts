@@ -186,7 +186,7 @@ export const content = {
       links: [
         { label: "Contatto", href: "#contact" },
         { label: "FAQ", href: "#faq" },
-        { label: "Privacy", href: "https://www.carauktion.ch/generalinfo/service/dataprotectionregulation.html" }
+        { label: "Privacy", href: "/privacy" }
       ]
     },
     mobileApp: {
@@ -209,6 +209,43 @@ export const content = {
       { code: 'en', label: 'EN' },
       { code: 'fr', label: 'FR' },
       { code: 'it', label: 'IT' }
+    ]
+  },
+  privacy: {
+    title: "Informativa sulla privacy (03.2020)",
+    sections: [
+      {
+        number: "1",
+        content: "CARAUKTION attribuisce grande importanza alla protezione dei diritti della personalità degli utenti nell'ambito dell'utilizzo della piattaforma d'asta. Le seguenti spiegazioni descrivono il trattamento dei dati personali e le misure per raggiungere la conformità alla protezione dei dati."
+      },
+      {
+        number: "2",
+        content: "I dati personali nell'ambito di queste disposizioni sono tutte le informazioni individuali sulle circostanze di una persona specifica. Il trattamento si riferisce a qualsiasi gestione di questi dati, in particolare anche la divulgazione o cancellazione, l'uso, la raccolta, l'archiviazione, la trasmissione o l'amministrazione dei dati personali."
+      },
+      {
+        number: "3",
+        content: "La raccolta dei dati avviene esclusivamente in relazione all'utilizzo della piattaforma d'asta di CARAUKTION con l'ausilio di strumenti elettronici previsti a tale scopo e sempre in conformità con la legge svizzera applicabile sulla protezione dei dati."
+      },
+      {
+        number: "4",
+        content: "CARAUKTION raccoglie dati personali per consentire l'accesso degli utenti alla piattaforma d'asta e dove questi sono assolutamente necessari nell'ambito delle attività commerciali per l'elaborazione. Ciò include, ad esempio, tutte le informazioni necessarie per adempiere all'obbligo contrattuale degli utenti (scambio di coordinate ai fini dell'adempimento del contratto) o informazioni su tutti gli ordini e le conclusioni contrattuali attuali e passati degli utenti. Queste informazioni includono, tra l'altro, dettagli su ordini in corso o completati, il momento della rispettiva presentazione di offerte e offerte, informazioni sull'andamento delle singole aste, l'importo e il momento del pagamento, nonché eventuali altri dati relativi all'elaborazione degli acquisti o delle vendite. Inoltre, i dati personali possono essere utilizzati per la cura del cliente, la valutazione del comportamento d'uso individuale o la verifica dell'autorizzazione all'accesso o dell'uso conforme al contratto della piattaforma d'asta da parte di CARAUKTION."
+      },
+      {
+        number: "5",
+        content: "CARAUKTION adotta tutte le misure di sicurezza tecniche e organizzative legalmente necessarie e appropriate affinché i dati personali degli utenti siano protetti da perdita, furto e abuso. CARAUKTION lavora solo con terze parti che possono garantirle un livello di protezione dei dati legale equivalente o superiore. CARAUKTION esclude tuttavia completamente qualsiasi responsabilità per un'eventuale responsabilità di terzi in base alle disposizioni sulla protezione dei dati."
+      },
+      {
+        number: "6",
+        content: "CARAUKTION non trasmette dati personali a terzi, a meno che una legge in senso formale lo preveda o ciò sia necessario a causa di interessi pubblici prevalenti. Sono esclusi da questo la trasmissione a terzi: per la protezione legale degli utenti; su richiesta delle autorità; per la difesa e la protezione dei diritti di CARAUKTION; per il rispetto delle condizioni d'uso; per la risoluzione di eventuali problemi tecnici del prodotto. È escluso il diritto di CARAUKTION di divulgare dati anonimizzati sui veicoli e dati non personali nell'ambito delle leggi svizzere (ad esempio per scopi statistici o di marketing e analisi, nonché per la raccolta di dati sul valore residuo)."
+      },
+      {
+        number: "7",
+        content: "Gli utenti hanno in qualsiasi momento il diritto di richiedere gratuitamente a CARAUKTION informazioni sui dati che li riguardano memorizzati."
+      },
+      {
+        number: "8",
+        content: "Queste disposizioni sulla protezione dei dati costituiscono parte integrante delle Condizioni Generali di Contratto (CGC) di CARAUKTION."
+      }
     ]
   }
 };

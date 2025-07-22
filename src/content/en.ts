@@ -186,7 +186,7 @@ export const content = {
       links: [
         { label: "Contact", href: "#contact" },
         { label: "FAQ", href: "#faq" },
-        { label: "Privacy", href: "https://www.carauktion.ch/generalinfo/service/dataprotectionregulation.html" }
+        { label: "Privacy", href: "/privacy" }
       ]
     },
     mobileApp: {
@@ -209,6 +209,43 @@ export const content = {
       { code: 'en', label: 'EN' },
       { code: 'fr', label: 'FR' },
       { code: 'it', label: 'IT' }
+    ]
+  },
+  privacy: {
+    title: "Privacy Policy (03.2020)",
+    sections: [
+      {
+        number: "1",
+        content: "CARAUKTION places great importance on protecting the personal rights of users when using the auction platform. The following explanations describe the handling of personal data and measures to achieve data protection compliance."
+      },
+      {
+        number: "2",
+        content: "Personal data within the scope of these provisions includes all individual information about the circumstances of a specific person. Processing refers to any handling of this data, including disclosure or deletion, use, collection, storage, transmission, or management of personal data."
+      },
+      {
+        number: "3",
+        content: "Data collection takes place solely in connection with the use of CARAUKTION's auction platform using designated electronic tools and always in accordance with applicable Swiss data protection law."
+      },
+      {
+        number: "4",
+        content: "CARAUKTION collects personal data to enable user access to the auction platform and where necessary for business operations. This includes, for example, all information needed to fulfill users' contractual obligations (exchange of contact details for contract fulfillment) or information about all current and past orders and contracts. This information includes details about ongoing or completed orders, the timing of offers and bids, information about individual auction progress, payment amounts and timing, and other data related to purchase or sales processing. Furthermore, personal data may be used for customer care, evaluation of individual usage behavior, or verification of access authorization and contractual platform use by CARAUKTION."
+      },
+      {
+        number: "5",
+        content: "CARAUKTION implements all legally necessary and appropriate technical and organizational security measures to protect users' personal data from loss, theft, and misuse. CARAUKTION only works with third parties who can guarantee an equivalent or higher legal level of data protection. However, CARAUKTION fully excludes any liability for third-party responsibility under data protection regulations."
+      },
+      {
+        number: "6",
+        content: "CARAUKTION does not share personal data with third parties unless required by formal law or necessary due to overriding public interests. Exceptions include sharing with third parties: for users' legal protection; upon official request; to defend and protect CARAUKTION's rights; to comply with terms of use; to resolve technical product issues. This excludes CARAUKTION's right to disclose anonymized vehicle data and non-personal data within Swiss law (such as for statistical or marketing and analysis purposes and for residual value data collection)."
+      },
+      {
+        number: "7",
+        content: "Users have the right at any time to request free information from CARAUKTION about the data stored about them."
+      },
+      {
+        number: "8",
+        content: "These privacy provisions form an integral part of CARAUKTION's General Terms and Conditions (GTC)."
+      }
     ]
   }
 };  

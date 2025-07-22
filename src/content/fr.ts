@@ -186,7 +186,7 @@ export const content = {
       links: [
         { label: "Contact", href: "#contact" },
         { label: "FAQ", href: "#faq" },
-        { label: "Confidentialité", href: "https://www.carauktion.ch/generalinfo/service/dataprotectionregulation.html" }
+        { label: "Confidentialité", href: "/privacy" }
       ]
     },
     mobileApp: {
@@ -209,6 +209,43 @@ export const content = {
       { code: 'en', label: 'EN' },
       { code: 'fr', label: 'FR' },
       { code: 'it', label: 'IT' }
+    ]
+  },
+  privacy: {
+    title: "Politique de confidentialité (03.2020)",
+    sections: [
+      {
+        number: "1",
+        content: "CARAUKTION accorde une grande importance à la protection des droits de la personnalité des utilisateurs dans le cadre de l'utilisation de la plateforme d'enchères. Les explications suivantes décrivent le traitement des données personnelles et les mesures pour atteindre la conformité en matière de protection des données."
+      },
+      {
+        number: "2",
+        content: "Les données personnelles dans le cadre de ces dispositions sont toutes les informations individuelles sur les circonstances d'une personne déterminée. Le traitement désigne toute manipulation de ces données, notamment la divulgation ou la suppression, l'utilisation, la collecte, le stockage, la transmission ou la gestion des données personnelles."
+      },
+      {
+        number: "3",
+        content: "La collecte de données a lieu uniquement en relation avec l'utilisation de la plateforme d'enchères de CARAUKTION à l'aide d'outils électroniques prévus à cet effet et toujours en conformité avec le droit suisse applicable en matière de protection des données."
+      },
+      {
+        number: "4",
+        content: "CARAUKTION collecte des données personnelles pour permettre l'accès des utilisateurs à la plateforme d'enchères ainsi que là où elles sont absolument nécessaires dans le cadre des activités commerciales. Cela comprend par exemple toutes les informations nécessaires pour remplir l'obligation contractuelle des utilisateurs (échange de coordonnées à des fins d'exécution du contrat) ou des informations sur toutes les commandes et conclusions de contrats actuelles et passées des utilisateurs. Ces informations comprennent entre autres des informations sur les commandes en cours ou terminées, le moment de la soumission des offres et des enchères respectives, des informations sur le déroulement des enchères individuelles, le montant et le moment du paiement ainsi que d'autres données éventuelles concernant le traitement des achats ou des ventes. En outre, les données personnelles peuvent être utilisées pour le service client, l'évaluation du comportement d'utilisation individuel ou la vérification de l'autorisation d'accès ou de l'utilisation conforme au contrat de la plateforme d'enchères par CARAUKTION."
+      },
+      {
+        number: "5",
+        content: "CARAUKTION prend toutes les mesures de sécurité techniques et organisationnelles légalement nécessaires et appropriées pour protéger les données personnelles des utilisateurs contre la perte, le vol et l'utilisation abusive. CARAUKTION ne travaille qu'avec des tiers qui peuvent lui garantir un niveau de protection des données légal équivalent ou supérieur. CARAUKTION exclut toutefois toute responsabilité pour une éventuelle responsabilité de tiers en vertu des dispositions relatives à la protection des données."
+      },
+      {
+        number: "6",
+        content: "CARAUKTION ne transmet pas de données personnelles à des tiers, sauf si une loi au sens formel le prévoit ou si cela est nécessaire en raison d'intérêts publics prépondérants. Sont exclus de cette règle la transmission à des tiers : pour la protection juridique des utilisateurs ; sur demande des autorités ; pour la défense et la protection des droits de CARAUKTION ; pour le respect des conditions d'utilisation ; pour la résolution d'éventuels problèmes techniques de produits. Cela exclut le droit de CARAUKTION de divulguer des données de véhicules anonymisées et des données non personnelles dans le cadre des lois suisses (par exemple à des fins statistiques ou de marketing et d'analyse ainsi que pour la collecte de données de valeur résiduelle)."
+      },
+      {
+        number: "7",
+        content: "Les utilisateurs ont à tout moment le droit de demander gratuitement à CARAUKTION des informations sur les données les concernant qui sont stockées."
+      },
+      {
+        number: "8",
+        content: "Ces dispositions relatives à la protection des données font partie intégrante des conditions générales (CG) de CARAUKTION."
+      }
     ]
   }
 };
