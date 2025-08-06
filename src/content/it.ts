@@ -77,7 +77,7 @@ export const content = {
       "Costi solo in caso di acquisto riuscito"
     ],
     commission: {
-      title: "Commissione basata sul successo",
+      title: "Tariffa di acquisizione",
       description: "Il nostro modello di prezzo semplice si basa sul tuo successo. Paghi solo quando vinci un'asta e concludi un acquisto.",
       rate: "2,99%",
       rateLabel: "della migliore offerta",

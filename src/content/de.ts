@@ -77,7 +77,7 @@ export const content = {
       "Kosten nur bei erfolgreichem Fahrzeugkauf"
     ],
     commission: {
-      title: "Erfolgsabhängige Gebühr",
+      title: "Abschlussgebühr",
       description: "Unser einfaches Preismodell orientiert sich an Ihrem Erfolg. Sie zahlen nur, wenn Sie eine Auktion gewinnen und einen Kauf abschließen.",
       rate: "2.99%",
       rateLabel: "des Höchstgebotes",

@@ -77,7 +77,7 @@ export const content = {
       "Coûts uniquement lors d'un achat réussi"
     ],
     commission: {
-      title: "Commission basée sur le succès",
+      title: "Frais d’acquisition",
       description: "Notre modèle de tarification simple est basé sur votre succès. Vous ne payez que lorsque vous remportez une enchère et finalisez un achat.",
       rate: "2,99%",
       rateLabel: "de la meilleure offre",

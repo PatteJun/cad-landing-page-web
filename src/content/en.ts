@@ -77,7 +77,7 @@ export const content = {
       "Costs only upon successful vehicle purchase"
     ],
     commission: {
-      title: "Success-Based Fee",
+      title: "Auction fee",
       description: "Our simple pricing model is based on your success. You only pay when you win an auction and complete a purchase.",
       rate: "2.99%",
       rateLabel: "of the highest bid",
