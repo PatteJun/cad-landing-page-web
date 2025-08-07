@@ -244,7 +244,7 @@ export const content = {
       },
       {
         number: "8",
-        content: "Ces dispositions relatives à la protection des données font partie intégrante des conditions générales (CG) de CARAUKTION."
+        content: "Ces dispositions relatives à la protection des données font partie intégrante des conditions générales (CG) de CARAUKTION Direct."
       }
     ]
   }

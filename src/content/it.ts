@@ -244,7 +244,7 @@ export const content = {
       },
       {
         number: "8",
-        content: "Queste disposizioni sulla protezione dei dati costituiscono parte integrante delle Condizioni Generali di Contratto (CGC) di CARAUKTION."
+        content: "Queste disposizioni sulla protezione dei dati costituiscono parte integrante delle Condizioni Generali di Contratto (CGC) di CARAUKTION Direct."
       }
     ]
   }

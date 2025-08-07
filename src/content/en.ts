@@ -244,7 +244,7 @@ export const content = {
       },
       {
         number: "8",
-        content: "These privacy provisions form an integral part of CARAUKTION's General Terms and Conditions (GTC)."
+        content: "These privacy provisions form an integral part of CARAUKTION Direct's General Terms and Conditions (GTC)."
       }
     ]
   }

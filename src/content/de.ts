@@ -244,7 +244,7 @@ export const content = {
       },
       {
         number: "8",
-        content: "Diese Datenschutzbestimmungen bilden einen integrierenden Bestandteil der Allgemeinen Geschäftsbedingungen (AGB) der CARAUKTION."
+        content: "Diese Datenschutzbestimmungen bilden einen integrierenden Bestandteil der Allgemeinen Geschäftsbedingungen (AGB) von CARAUKTION Direct."
       }
     ]
   }
