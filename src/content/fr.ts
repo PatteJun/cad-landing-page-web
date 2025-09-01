@@ -211,6 +211,14 @@ export const content = {
       { code: 'it', label: 'IT' }
     ]
   },
+  autoScout24Banner: {
+    line1: "La plateforme C2B CARAUKTION Direct fait désormais partie d'AutoScout24.",
+    line2: "Vous pouvez continuer à accéder à CARAUKTION Direct comme d'habitude.",
+    line3: "Notre nouveau canal de contact pour vous :",
+    line4: "Pour toutes questions concernant AutoScout24 Direct, vous pouvez désormais nous joindre directement au :",
+    phone: "Téléphone : +41 58 900 73 71",
+    email: "Email : direct@autoscout24.ch"
+  },
   privacy: {
     title: "Politique de confidentialité (03.2020)",
     sections: [

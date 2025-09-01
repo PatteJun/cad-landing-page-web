@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import AutoScout24Banner from '../components/AutoScout24Banner.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import Hero from '../components/Hero.astro';
@@ -14,6 +15,8 @@ import MidPageCTA from '../components/MidPageCTA.astro';
 ---
 
 <Layout title="CARAUKTION - Exclusive Car Auctions for Dealers">
+  <AutoScout24Banner />
+  <div id="banner-spacer" class="h-[120px]"></div>
   <Navbar />
   <main>
     <Hero />
